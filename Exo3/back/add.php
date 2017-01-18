@@ -16,6 +16,7 @@ $credentials = array(
 "couleur" => $_POST['couleur'],
 );
 
+//requete pour vérifier que le model de vehicule n'existe pas déjà
 $modeleQuery = $instance->prepare("SELECT * FROM vehicule WHERE vehicule.modele = :modele ");
 $modeleQuery->execute(array("modele" => $credentials['modele']));
 $modele = $modeleQuery->fetch();
@@ -30,7 +31,9 @@ if ($modele == false){
     'annee' => $credentials['annee'],
     'couleur' => $credentials['couleur'],
   ));
+  //on lui dit le type de donné qu'on lui retourne
   header('Content-Type: application/json');
+  //les donnée qu'on lui retourne
   echo json_encode(array("success" => 1));
 }else{
   header('Content-Type: application/json');

@@ -22,6 +22,7 @@ $(document).ready(function() {
       dataType : "json",
       success: function(response) {
         console.log(response);
+        //si le php nous renvoi success en json alors le vehicule a bien ete ajouter en bdd
         if (response.success){
           console.log('success');
           $('#append').append('<p>Vehicule ajouter</p>');
