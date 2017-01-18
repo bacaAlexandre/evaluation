@@ -5,7 +5,7 @@
 	if(isset($_GET['order']) && isset($_GET['column'])){
 		if($_GET['column'] == 'lastname'){
 			$order = ' ORDER BY lastname';
-		}elseif($_GET['column'] = 'firstname'){
+		}elseif($_GET['column'] == 'firstname'){
 			$order = ' ORDER BY firstname';
 		}elseif($_GET['column'] == 'birthdate'){
 			$order = ' ORDER BY birthdate';
